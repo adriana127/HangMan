@@ -1,0 +1,7 @@
+\hangman\h7.jpg
+\hangman\h6.jpg
+\hangman\h5.jpg
+\hangman\h4.jpg
+\hangman\h3.jpg
+\hangman\h2.jpg
+\hangman\h1.jpg

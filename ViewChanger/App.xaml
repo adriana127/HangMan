@@ -1,0 +1,41 @@
+﻿<Application x:Class="ViewChanger.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:ViewChanger"
+             xmlns:viewmodels="clr-namespace:ViewChanger.ViewModels"
+             xmlns:views="clr-namespace:ViewChanger.Views"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+
+        <DataTemplate DataType="{x:Type viewmodels:HomeViewModel}">
+            <views:HomeView>
+            </views:HomeView>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewmodels:GameViewModel}">
+            <views:GameView>
+            </views:GameView>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewmodels:SignUpViewModel}">
+            <views:SignUp>
+            </views:SignUp>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewmodels:PopUpViewMode}">
+            <views:PopUpView>
+            </views:PopUpView>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewmodels:StatiticsViewModel}">
+            <views:StaticsView>
+            </views:StaticsView>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewmodels:CongratsViewModel}">
+            <views:CongratsView>
+            </views:CongratsView>
+        </DataTemplate>
+
+    </Application.Resources>
+</Application>

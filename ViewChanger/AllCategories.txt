@@ -1,0 +1,3 @@
+Adriana \images\1.png 1 0
+Elena \images\3.jpg 0 0
+Crina \images\5.jpg 0 1

@@ -1,0 +1,248 @@
+﻿<UserControl x:Class="ViewChanger.Views.GameView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ViewChanger.Views"
+             xmlns:viewmodels="clr-namespace:ViewChanger.ViewModels"
+             xmlns:views="clr-namespace:ViewChanger.Views"
+             xmlns:vm="clr-namespace:ViewChanger.ViewModels"
+             
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="800">
+
+
+
+
+
+    <Grid Background="Aqua">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="9*"></ColumnDefinition>
+            <ColumnDefinition Width="16*"/>
+
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="422*"></RowDefinition>
+            <RowDefinition Height="263*"></RowDefinition>
+            <RowDefinition Height="114*"/>
+
+        </Grid.RowDefinitions>
+        <Grid Margin="0,0,0,0.4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="16*"/>
+
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="65*"></RowDefinition>
+                <RowDefinition Height="172*"></RowDefinition>
+
+            </Grid.RowDefinitions>
+            <WrapPanel Margin="0,0,26,20">
+                <Menu DockPanel.Dock="Top">
+                    <MenuItem Header="_File">
+                        <MenuItem Header="_New Game" Command="{Binding NewGame, UpdateSourceTrigger=PropertyChanged}"/>
+                        <MenuItem Header="_Save Game" Command="{Binding SaveGame, UpdateSourceTrigger=PropertyChanged}" />
+                        <MenuItem Header="_Statitics"  Command="{Binding Statitics, UpdateSourceTrigger=PropertyChanged}"  />
+
+                        <Separator />
+                        <MenuItem Header="_Exit" Command="{Binding goToHomeView, UpdateSourceTrigger=PropertyChanged}"  />
+                    </MenuItem>
+                </Menu>
+                <Menu DockPanel.Dock="Top">
+                    <MenuItem Header="_Categories">
+                        <MenuItem Header="_All Categories" Command="{Binding SetCategory, UpdateSourceTrigger=PropertyChanged}" CommandParameter="All-categories"/>
+                        <MenuItem Header="_Astronomy" CommandParameter="Astronomy"  Command="{Binding SetCategory, UpdateSourceTrigger=PropertyChanged}"  />
+                        <MenuItem Header="_Animals" CommandParameter="Animals"  Command="{Binding SetCategory, UpdateSourceTrigger=PropertyChanged}"  />
+                        <MenuItem Header="_Cars"  CommandParameter="Cars" Command="{Binding SetCategory, UpdateSourceTrigger=PropertyChanged}"  />
+
+                        <MenuItem Header="_Movies" CommandParameter="Movies" Command="{Binding SetCategory, UpdateSourceTrigger=PropertyChanged}" />
+                        <MenuItem Header="_Music" CommandParameter="Music" Command="{Binding SetCategory, UpdateSourceTrigger=PropertyChanged}" />
+
+                    </MenuItem>
+                </Menu>
+
+                <Menu DockPanel.Dock="Top">
+                    <MenuItem Header="Help">
+                        <MenuItem Header="_All Categories" />
+                        <MenuItem Header="_Stefan Adriana"  />
+                        <MenuItem Header="_10LF383" />
+                        <MenuItem Header="_Informatica Aplicata" />
+
+                        <MenuItem Header="_Movies" />
+                        <MenuItem Header="_Music" />
+
+                    </MenuItem>
+                </Menu>
+            </WrapPanel>
+            <Image Grid.Row="1" Source="{Binding HangMan,UpdateSourceTrigger=PropertyChanged}"></Image>
+
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="1" Margin="0,0.6,0,0" Grid.RowSpan="2">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+
+            </Grid.RowDefinitions>
+            <Button Grid.Column="0" Grid.Row="0" Height="60" IsEnabled="{Binding DisableButtonQ}" CommandParameter="q" Command="{Binding OnButtonClickCommand, UpdateSourceTrigger=PropertyChanged}">Q</Button>
+            <Button Grid.Column="1" Grid.Row="0" Height="60" IsEnabled="{Binding DisableButtonW}" CommandParameter="w" Command="{Binding OnButtonClickCommand, UpdateSourceTrigger=PropertyChanged}">W</Button>
+            <Button Grid.Column="2" Grid.Row="0" Height="60" IsEnabled="{Binding DisableButtonE}" CommandParameter="e" Command="{Binding OnButtonClickCommand, UpdateSourceTrigger=PropertyChanged}">E</Button>
+            <Button Grid.Column="3" Grid.Row="0" Height="60" IsEnabled="{Binding DisableButtonR}" CommandParameter="r" Command="{Binding OnButtonClickCommand, UpdateSourceTrigger=PropertyChanged}">R</Button>
+            <Button Grid.Column="4" Grid.Row="0" Height="60" IsEnabled="{Binding DisableButtonT}" CommandParameter="t" Command="{Binding OnButtonClickCommand, UpdateSourceTrigger=PropertyChanged}">T</Button>
+
+            <Button Grid.Column="5" Grid.Row="0" Height="60" IsEnabled="{Binding DisableButtonY}" CommandParameter="y" Command="{Binding OnButtonClickCommand, UpdateSourceTrigger=PropertyChanged}">Y</Button>
+            <Button Grid.Column="6" Grid.Row="0" Height="60" IsEnabled="{Binding DisableButtonU}" CommandParameter="u" Command="{Binding OnButtonClickCommand, UpdateSourceTrigger=PropertyChanged}">U</Button>
+            <Button Grid.Column="7" Grid.Row="0" Height="60" IsEnabled="{Binding DisableButtonI}" CommandParameter="i" Command="{Binding OnButtonClickCommand, UpdateSourceTrigger=PropertyChanged}">I</Button>
+            <Button Grid.Column="8" Grid.Row="0" Height="60" IsEnabled="{Binding DisableButtonO}" CommandParameter="o" Command="{Binding OnButtonClickCommand, UpdateSourceTrigger=PropertyChanged}">O</Button>
+            <Button Grid.Column="9" Grid.Row="0" Height="60" IsEnabled="{Binding DisableButtonP}" CommandParameter="p" Command="{Binding OnButtonClickCommand, UpdateSourceTrigger=PropertyChanged}">P</Button>
+
+
+            <Button Grid.Column="0" Grid.Row="1" Height="60" IsEnabled="{Binding DisableButtonA}" CommandParameter="a" Command="{Binding OnButtonClickCommand, UpdateSourceTrigger=PropertyChanged}">A</Button>
+            <Button Grid.Column="1" Grid.Row="1" Height="60" IsEnabled="{Binding DisableButtonS}" CommandParameter="s" Command="{Binding OnButtonClickCommand, UpdateSourceTrigger=PropertyChanged}">S</Button>
+            <Button Grid.Column="2" Grid.Row="1" Height="60" IsEnabled="{Binding DisableButtonD}" CommandParameter="d" Command="{Binding OnButtonClickCommand, UpdateSourceTrigger=PropertyChanged}">D</Button>
+            <Button Grid.Column="3" Grid.Row="1" Height="60" IsEnabled="{Binding DisableButtonF}" CommandParameter="f" Command="{Binding OnButtonClickCommand, UpdateSourceTrigger=PropertyChanged}">F</Button>
+            <Button Grid.Column="4" Grid.Row="1" Height="60" IsEnabled="{Binding DisableButtonG}" CommandParameter="g" Command="{Binding OnButtonClickCommand, UpdateSourceTrigger=PropertyChanged}">G</Button>
+
+            <Button Grid.Column="5" Grid.Row="1" Height="60" IsEnabled="{Binding DisableButtonH}" CommandParameter="h" Command="{Binding OnButtonClickCommand, UpdateSourceTrigger=PropertyChanged}">H</Button>
+            <Button Grid.Column="6" Grid.Row="1" Height="60" IsEnabled="{Binding DisableButtonJ}" CommandParameter="j" Command="{Binding OnButtonClickCommand, UpdateSourceTrigger=PropertyChanged}">J</Button>
+            <Button Grid.Column="7" Grid.Row="1" Height="60" IsEnabled="{Binding DisableButtonK}" CommandParameter="k" Command="{Binding OnButtonClickCommand, UpdateSourceTrigger=PropertyChanged}">K</Button>
+            <Button Grid.Column="8" Grid.Row="1" Height="60" IsEnabled="{Binding DisableButtonL}" CommandParameter="l" Command="{Binding OnButtonClickCommand, UpdateSourceTrigger=PropertyChanged}">L</Button>
+            <Button Grid.Column="6" Grid.Row="2" Height="60" IsEnabled="{Binding DisableButtonZ}" CommandParameter="z" Command="{Binding OnButtonClickCommand, UpdateSourceTrigger=PropertyChanged}">Z</Button>
+
+            <Button Grid.Column="7" Grid.Row="2" Height="60" IsEnabled="{Binding DisableButtonX}" CommandParameter="x" Command="{Binding OnButtonClickCommand, UpdateSourceTrigger=PropertyChanged}">X</Button>
+            <Button Grid.Column="2" Grid.Row="2" Height="60" IsEnabled="{Binding DisableButtonC}" CommandParameter="c" Command="{Binding OnButtonClickCommand, UpdateSourceTrigger=PropertyChanged}">C</Button>
+            <Button Grid.Column="3" Grid.Row="2" Height="60" IsEnabled="{Binding DisableButtonV}" CommandParameter="v" Command="{Binding OnButtonClickCommand, UpdateSourceTrigger=PropertyChanged}">V</Button>
+            <Button Grid.Column="4" Grid.Row="2" Height="60" IsEnabled="{Binding DisableButtonB}" CommandParameter="b" Command="{Binding OnButtonClickCommand, UpdateSourceTrigger=PropertyChanged}">B</Button>
+            <Button Grid.Column="5" Grid.Row="2" Height="60" IsEnabled="{Binding DisableButtonN}" CommandParameter="n" Command="{Binding OnButtonClickCommand, UpdateSourceTrigger=PropertyChanged}">N</Button>
+
+            <Button Grid.Column="6" Grid.Row="2" Height="60" IsEnabled="{Binding DisableButtonM}"  CommandParameter="m" Command="{Binding OnButtonClickCommand, UpdateSourceTrigger=PropertyChanged}">M</Button>
+
+
+
+
+
+
+        </Grid>
+        <Grid Grid.Row="0" Grid.Column="1" Margin="0,0,0,0.4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+
+            </Grid.RowDefinitions>
+            <Grid  Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+
+                </Grid.RowDefinitions>
+                <Label HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="40" Content="{Binding Name}"></Label>
+                <Image Grid.Column="1" Source="{Binding Image}"></Image>
+
+
+            </Grid>
+            <Grid Grid.Row="1" Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Grid.Column="0" FontSize="20" Content="{Binding SecretWord ,UpdateSourceTrigger=PropertyChanged }" Margin="0,0,9,0"></Label>
+                
+                    <Label Grid.Row="1"  FontSize="30" Content="{Binding LabelContent ,UpdateSourceTrigger=PropertyChanged }" Margin="0,0,9,0"></Label>
+
+
+            </Grid>
+        </Grid>
+        <!--Label HorizontalAlignment="Center" Content="{Binding FirstWord, UpdateSourceTrigger=PropertyChanged}"></-->
+        <Grid Grid.Row="1" Grid.Column="0" Margin="0,0.6,0,0" Grid.RowSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+
+
+            </Grid.RowDefinitions>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="0*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+
+                </Grid.ColumnDefinitions>
+                <Label VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="40" Content="Time:" Margin="0,0,0,0.4"/>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="40" Grid.Column="1"  Text="{Binding Time}" Margin="0,0,0,-0.6" Grid.RowSpan="2"></TextBlock>
+
+            </Grid>
+            <Grid  Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="0*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+
+                </Grid.ColumnDefinitions>
+                <Label VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="40" Content="Lvl:" Margin="0,0,0,0.4"/>
+                <Label VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="40" Grid.Column="1" Content="{Binding Levels,UpdateSourceTrigger=PropertyChanged}" RenderTransformOrigin="0.5,0.5">
+            </Label>
+            </Grid>
+      
+            <Grid Grid.Row="2"  >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50" Content="{Binding X1}"></Label>
+                <Label Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50" Content="{Binding X2}"></Label>
+                <Label Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50" Content="{Binding X3}"></Label>
+                <Label Grid.Column="3" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50" Content="{Binding X4}"></Label>
+                <Label Grid.Column="4" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50" Content="{Binding X5}"></Label>
+                <Label Grid.Column="5" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="50" Content="{Binding X6}"></Label>
+
+
+            </Grid>
+
+        </Grid>
+
+    </Grid>
+</UserControl>
